@@ -15,3 +15,9 @@ let containsDuplicate = function (nums) {
   }
   return false;
 };
+
+//! second method
+let containsDuplicate2 = function (nums) {
+  const nums2 = [...new Set(nums)];
+  return nums2.length === nums.length;
+};
