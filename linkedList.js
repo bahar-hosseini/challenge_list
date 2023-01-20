@@ -70,6 +70,26 @@ class LinkedList {
     return null;
   }
   //Remove at index
+  removeAtIndex(index) {
+    if (index > 0 && index > this.size) {
+      return;
+    }
+
+    let current = this.head;
+    let previous;
+    let count = 0;
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      while (count < index) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
+      previous.next = current.next;
+    }
+    this.size--;
+  }
 
   //clear list
 
@@ -91,5 +111,6 @@ ll.insertfirstNode(300);
 
 ll.insertLastNode(400);
 ll.insertAtIndex(777, 2);
-// ll.printListData();
-ll.getAtIndex(0);
+ll.removeAtIndex(0);
+ll.printListData();
+// ll.getAtIndex(0);
