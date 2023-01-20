@@ -39,7 +39,41 @@ class LinkedList {
     if (index > 0 && index > this.size) {
       return;
     }
+    let node = new Node(data);
+    let current;
+    let previous;
+
+    current = this.head;
+    let count = 0;
+    while (count < index) {
+      previous = current;
+      count++;
+      current = current.next;
+    }
+    node.next = current;
+    previous.next = node;
+
+    this.size++;
   }
+
+  //get at index
+  getAtIndex(index) {
+    let current = this.head;
+    let count = 0;
+    while (current) {
+      if (count === index) {
+        console.log(current.data);
+      }
+      count++;
+      current = current.next;
+    }
+    return null;
+  }
+  //Remove at index
+
+  //clear list
+
+  //print list data
 
   printListData() {
     let current = this.head;
@@ -56,5 +90,6 @@ ll.insertfirstNode(200);
 ll.insertfirstNode(300);
 
 ll.insertLastNode(400);
-
-ll.printListData();
+ll.insertAtIndex(777, 2);
+// ll.printListData();
+ll.getAtIndex(0);
