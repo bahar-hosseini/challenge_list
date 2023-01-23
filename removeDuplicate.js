@@ -5,17 +5,13 @@
  * @return {number}
  */
 let removeDuplicates = function (nums) {
-  // Length of the updated array
-  let count = 0;
-  // Loop for all the elements in the array
-  for (let i = 0; i < nums.length; i++) {
-    // If the current element is equal to the next element, we skip
-    if (i < nums.length - 1 && nums[i] === nums[i + 1]) {
-      continue;
+  if (nums.length === 0) return 0;
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[j] !== nums[i]) {
+      i++;
+      nums[i] = nums[j];
     }
-    // We will update the array in place
-    nums[count] = nums[i];
-    count++;
   }
-  return count;
+  return i + 1;
 };
