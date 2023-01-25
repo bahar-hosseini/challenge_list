@@ -4,7 +4,7 @@
  * @param {string} s
  * @return {number}
  */
-let lengthOfLastWord = function (s) {
+const lengthOfLastWord = function (s) {
   s = s.trim().split(' ');
   return s[s.length - 1].length;
 };
