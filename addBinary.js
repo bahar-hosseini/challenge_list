@@ -7,13 +7,13 @@
  */
 let addBinary = function (a, b) {
   //! ***** first method: ****** :
-  //* the highest supported number in js is 53 bit
+  * the highest supported number in js is 53 bit */
 
-  // if (a.length < 53 && b.length < 53) {
+  if (a.length < 53 && b.length < 53) {
 
-  //   return ((parseInt(a,2) + parseInt(b,2)).toString(2));
-  // }
-  // return ((BigInt("0b" + a) + BigInt("0b" + b)).toString(2));
+    return ((parseInt(a,2) + parseInt(b,2)).toString(2));
+  }
+  return ((BigInt("0b" + a) + BigInt("0b" + b)).toString(2));
 
   //! ***** Second method: *****
 
