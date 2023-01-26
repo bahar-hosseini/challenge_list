@@ -19,5 +19,27 @@ const climbStairs = function (n) {
     }
   };
 };
+
 const climbFunc = climbStairs();
 console.log(climbFunc(7));
+
+// Method 2
+
+const climbStairs2 = function (n) {
+  if (n <= 3) {
+    return n;
+  }
+
+  let a = 2;
+  let b = 3;
+  let temp = 0;
+  for (let i = 3; i < n; i++) {
+    temp = b;
+    b = a + b;
+    a = temp;
+  }
+
+  return b;
+};
+
+console.log(climbStairs2(5));
