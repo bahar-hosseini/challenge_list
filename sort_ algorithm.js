@@ -23,7 +23,7 @@ const selection = (array) => {
     let min = i;
     let temp = array[i];
     for (let j = 0; j < array.length; j++) {
-      if (array[i] < array[min]) {
+      if (array[j] < array[min]) {
         min = j;
       }
     }
