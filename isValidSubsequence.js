@@ -32,4 +32,13 @@ const isValidSubsequence = (array, sequence) => {
   }
 };
 
-console.log(isValidSubsequence(array, sequence));
+// cleaner:
+const isValidSubsequence2 = (arrOne,arrTwo)=>{
+  let j = 0;
+  for (let i = 0; i < arrOne.length; i++) {
+    if (arrTwo[j] === arrOne[i]) j++;
+  }
+  return j === arrTwo.length;
+};
+
+console.log(isValidSubsequence2(array, sequence));
