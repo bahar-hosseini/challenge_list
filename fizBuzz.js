@@ -22,3 +22,27 @@ let fizzBuzz = function (n) {
   }
   return result;
 };
+
+
+// Second method
+let fizzBuzz2 = function(n) {
+  let result = [];
+  let str = "";
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0) {
+      str += "Fizz";
+    }
+    if (i % 5 === 0) {
+      
+      str += "Buzz";
+    }
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      str += i;
+    }
+    result.push(str);
+    str = '';
+  }
+  return result;
+};
+
+console.log(fizzBuzz2(15));
