@@ -37,6 +37,20 @@ const findPlayer2 = (players) => {
   return result;
 };
 
+//! Third method:
+ 
+const findPlayer3 = (array) =>{
+
+  let obj = {};
+
+  for (let item of array) {
+    obj[item['winner']] = obj[item['winner']] + 1 || 1;
+    obj[item['loser']] = obj[item['loser']] + 1 || 1;
+  }
+  return Object.keys(obj);
+};
+
+
 console.log(findPlayer2(gameResults));
 
 //? Question: Part 2 :  write a function that produces a data structure like the following, which lists each participant, and a list of who they've beaten.
